@@ -37,7 +37,24 @@ var routerApiLivreur = require('./routes/apiLivreur');
 var routerApiPlats = require('./routes/apiPlats');
 var routerApiCommande = require('./routes/apiCommande');
 
+//CORS
+var cors = require('cors');
 
+var whitelist = ['https://www.chess.com', 'https://www.delirescalade.com', 'https://cegepgarneau.omnivox.ca'];
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.get('/requeteCORSWhitelist',cors(corsOptions), function (req, res) {
+    console.log('requeteCORSWhitelist');
+      res.json({ message: 'Accepte les requête de GET sur la ressource' });
+    });
 
 //Importation du modèle usager
 var usagerModels = require('./models/usagerModels').usagerModels;
