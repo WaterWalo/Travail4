@@ -3,13 +3,13 @@
 var express = require('express');
 
 var routerApiPlats = express.Router();
-var url_base = "http://localhost:8090";
+var url_base = "https://travail3.herokuapp.com/";
 
 //ORM Mongoose
 var mongoose = require('mongoose');
 
 // Connexion à MongoDB avec Mongoose
-mongoose.connect('mongodb://localhost:27017/ubereat', {
+mongoose.connect('mongodb+srv://<username>:<password>@cluster0.ar7yk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/ubereat', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     poolSize: 10
