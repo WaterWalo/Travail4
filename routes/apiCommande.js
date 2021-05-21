@@ -5,17 +5,9 @@ var express = require('express');
 var routerApiCommande = express.Router();
 var url_base = "https://travail3.herokuapp.com/";
 
-//ORM Mongoose
-var mongoose = require('mongoose');
 // Token JWT
 var jwt = require('jsonwebtoken');
 
-// Connexion à MongoDB avec Mongoose
-mongoose.connect('mongodb+srv://Anthony:travail3@cluster0.ar7yk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/ubereat', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    poolSize: 10
-});
 
 //Importation du modèle usager et commande
 var usagerModels = require('../models/usagerModels').usagerModels;

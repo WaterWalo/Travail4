@@ -17,6 +17,16 @@ app.use(hateoasLinker);
 var swaggerUI = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');
 
+//ORM Mongoose
+var mongoose = require('mongoose');
+
+// Connexion à MongoDB avec Mongoose
+mongoose.connect('mongodb+srv://Anthony:travail3@cluster0.ar7yk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/ubereat', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    poolSize: 10
+});
+
 //Variables JwtToken
 var jwt = require('jsonwebtoken');
 app.set('jwt-secret', config.secret);
