@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 
 // Connexion à MongoDB avec Mongoose
-mongoose.connect('mongodb+srv://Anthony:<travail3>@cluster0.ar7yk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/ubereat', {
+mongoose.connect('mongodb+srv://Anthony:travail3@cluster0.ar7yk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/ubereat', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     poolSize: 10

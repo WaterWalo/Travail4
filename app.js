@@ -6,6 +6,8 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+const PORT = process.env.PORT || 8090;
+
 // Paramètres de configuration généraux.
 var config = require('./config');
 
@@ -100,6 +102,6 @@ app.all('*', function (req, res) {
 });
 
 // Démarrage du serveur.
-app.listen(8090, function () {
+app.listen(PORT, function () {
     console.log('Serveur sur port ' + this.address().port);
 }); 
