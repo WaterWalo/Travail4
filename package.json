@@ -1,0 +1,20 @@
+{
+  "name": "tp3-uber-eat",
+  "version": "1.0.0",
+  "description": "Tp3 Web 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anthony Levesque",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-hateoas-links": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.9",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

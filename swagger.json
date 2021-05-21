@@ -1,0 +1,1149 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "Tp3-Web",
+      "version": "0.1",
+      "title": "Tp3-Web"
+    },
+    "paths": {
+      "/plats": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model1"
+              },
+              "x-examples": {
+                "application/json": "{\r\n    \"nom\": \"Pomme\",\r\n    \"nbrPortions\":1\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Permet d'ajouter un produit.",
+              "schema": {
+                "$ref": "#/definitions/Model8"
+              }
+            }
+          }
+        }
+      },
+      "/plats/": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Permet de consulter un produit",
+              "schema": {
+                "$ref": "#/definitions/Model9"
+              }
+            }
+          }
+        }
+      },
+      "/livreurs": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model3"
+              },
+              "x-examples": {
+                "application/json": "{\r\n    \"nom\": \"Levesque\",\r\n    \"prenom\": \"Anthony\",\r\n    \"voiture\": \"Nissan GTR 2020\",\r\n    \"quartier\": \"Val-Belair\"\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Permet de crée un livreur",
+              "schema": {
+                "$ref": "#/definitions/Model11"
+              }
+            }
+          }
+        }
+      },
+      "/connexions": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model6"
+              },
+              "x-examples": {
+                "application/json": "{\r\n    \"_id\": \"60a3e73766e423373463ceb2\",\r\n    \"nom\": \"Rousseau\",\r\n    \"prenom\": \"Bruno\",\r\n    \"adresse\": \"1461 rue Alouette\",\r\n    \"pseudo\": \"bruno1\",\r\n    \"motDePasse\": \"mdp\",\r\n    \"__v\": 0\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Permet se connecter.",
+              "schema": {
+                "$ref": "#/definitions/Model12"
+              }
+            }
+          }
+        }
+      },
+      "/usagers/60a7be2f2f2c2a5fb8625038": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Consultation d'un utilisateur",
+              "schema": {
+                "$ref": "#/definitions/Model20"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/usagers/60a3e73766e423373463ceb2/commandes/60a7d988f2264a55fcfe27a6": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Permet d'obtenir la commande d'un usager.",
+              "schema": {
+                "$ref": "#/definitions/Model16"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model2"
+              },
+              "x-examples": {
+                "application/json": "{\r\n   \"dateArrivee\":\"2033-02-22\"\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Permet de modifier la date d'arrivée d'une commande.",
+              "schema": {
+                "$ref": "#/definitions/Model14"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/usagers/60a3e73766e423373463ceb2/commandes": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model4"
+              },
+              "x-examples": {
+                "application/json": "{\r\n    \"_id\": \"60a728dd24efe21e64b8bfa5\",\r\n    \"plats\": [],\r\n    \"usager\": {\r\n        \"_id\": \"60a3e73766e423373463ceb2\",\r\n        \"nom\": \"Rousseau\",\r\n        \"prenom\": \"Bruno\",\r\n        \"adresse\": \"1461 rue Alouette\",\r\n        \"pseudo\": \"bruno1\",\r\n        \"motDePasse\": \"mdp\",\r\n        \"__v\": 0\r\n    },\r\n    \"__v\": 0\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Permet d'obtenir la commande de l'usager",
+              "schema": {
+                "$ref": "#/definitions/Model15"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/usagers/60a3e73766e423373463ceb2/commandes/60a7d988f2264a55fcfe27a6/livreur": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model7"
+              },
+              "x-examples": {
+                "application/json": "{\r\n   \"nom\":\"Paul\",\r\n   \"prenom\":\"Jean\",\r\n   \"voiture\": \"toyota corolla\",\r\n   \"quartier\": \"Val-Bélair\"\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Permet de modifier le livreur d'une commande.",
+              "schema": {
+                "$ref": "#/definitions/Model17"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/usagers/60a3e73766e423373463ceb2/commandes/60a7d988f2264a55fcfe27a6/plats/60a338214009172f9462c460": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model0"
+              },
+              "x-examples": {
+                "application/json": "{\r\n    \"nom\": \"Pomme\",\r\n    \"nbrPortions\":1\r\n}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Permet d'ajouter un plat à la commande.",
+              "schema": {
+                "$ref": "#/definitions/Model18"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/usagers/60a3e73766e423373463ceb2/commandes/60a3e73766e423373463ceb2": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "204": {
+              "description": "Permet de supprimer la commande d'un usager",
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "security": [
+            {
+              "Secured": []
+            }
+          ]
+        }
+      },
+      "/usagers": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Model5"
+              },
+              "x-examples": {
+                "application/json": "{\"nom\": \"Rousseau\", \"prenom\":\"Bruno\", \"adresse\":\"1461 rue Alouette\", \"pseudo\":\"bruno1\",\"motDePasse\": \"mdp\"}"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Permet d'ajouter un nouvel usager",
+              "schema": {
+                "$ref": "#/definitions/Model19"
+              }
+            }
+          }
+        }
+      },
+      "/{param0}/{param1}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "param0",
+              "in": "path",
+              "description": "Example values form path are: 'plats' and 'livreurs'",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "param1",
+              "in": "path",
+              "description": "Example values form path are: '60a28e221787fc0524a51035' and '60a7bf7c2f2c2a5fb8625039'",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Definition generated from Swagger Inspector",
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "/{param2}/{param3}": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "param2",
+              "in": "path",
+              "description": "Example values form path are: 'plats' and 'livreurs'",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "param3",
+              "in": "path",
+              "description": "Example values form path are: '60a338214009172f9462c460' and '60a7bf7c2f2c2a5fb8625039'",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Definition generated from Swagger Inspector",
+              "schema": {
+                "$ref": "#/definitions/Model10"
+              }
+            },
+            "404": {
+              "description": "Definition generated from Swagger Inspector",
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securityDefinitions": {
+      "Secured": {
+        "type": "oauth2",
+        "authorizationUrl": "https://example.com",
+        "flow": "implicit",
+        "scopes": {}
+      }
+    },
+    "definitions": {
+      "Model2": {
+        "properties": {
+          "dateArrivee": {
+            "type": "string"
+          }
+        }
+      },
+      "Model0": {
+        "properties": {
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model1": {
+        "properties": {
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model3": {
+        "properties": {
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "voiture": {
+            "type": "string"
+          },
+          "quartier": {
+            "type": "string"
+          }
+        }
+      },
+      "Usager": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model4": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "plats": {
+            "type": "array"
+          },
+          "usager": {
+            "$ref": "#/definitions/Usager"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model5": {
+        "properties": {
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          }
+        }
+      },
+      "Model6": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model7": {
+        "properties": {
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "voiture": {
+            "type": "string"
+          },
+          "quartier": {
+            "type": "string"
+          }
+        }
+      },
+      "Links": {
+        "properties": {
+          "rel": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          }
+        }
+      },
+      "Model8": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Links"
+            }
+          }
+        }
+      },
+      "Array": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model9": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Array"
+        }
+      },
+      "Model10": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model11": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "voiture": {
+            "type": "string"
+          },
+          "quartier": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model12": {
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "Model13": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Plats": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model14_Usager": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Livreur": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "voiture": {
+            "type": "string"
+          },
+          "quartier": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model14": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "plats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Plats"
+            }
+          },
+          "usager": {
+            "$ref": "#/definitions/Model14_Usager"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "livreur": {
+            "$ref": "#/definitions/Livreur"
+          },
+          "dateArrivee": {
+            "type": "string"
+          }
+        }
+      },
+      "Model15_Usager": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model15": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "plats": {
+            "type": "array"
+          },
+          "usager": {
+            "$ref": "#/definitions/Model15_Usager"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model16_Plats": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model16_Usager": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model16_Livreur": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "voiture": {
+            "type": "string"
+          },
+          "quartier": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model16": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "plats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Model16_Plats"
+            }
+          },
+          "usager": {
+            "$ref": "#/definitions/Model16_Usager"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "livreur": {
+            "$ref": "#/definitions/Model16_Livreur"
+          }
+        }
+      },
+      "Model17_Plats": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model17_Usager": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model17_Livreur": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "voiture": {
+            "type": "string"
+          },
+          "quartier": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model17": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "plats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Model17_Plats"
+            }
+          },
+          "usager": {
+            "$ref": "#/definitions/Model17_Usager"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "livreur": {
+            "$ref": "#/definitions/Model17_Livreur"
+          }
+        }
+      },
+      "Model18_Plats": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "nbrPortions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model18_Usager": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model18": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "plats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Model18_Plats"
+            }
+          },
+          "usager": {
+            "$ref": "#/definitions/Model18_Usager"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model19": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Model20": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "prenom": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          },
+          "pseudo": {
+            "type": "string"
+          },
+          "motDePasse": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    }
+  }
